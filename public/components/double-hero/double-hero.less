@@ -5,7 +5,7 @@
 }
 
 /* Basic styles for the hero block */
-#hero {
+#double-hero {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,12 +16,12 @@
   margin: 20px 0;
 }
 
-.hero {
+.double-hero {
   display: flex;
   height: 100%;
   position: relative;
   border: 1px solid #ddd;
-  max-width: 700px;
+  gap: 10px;
   padding: 10px;
 }
 
@@ -97,6 +97,12 @@
   padding: 2px 0;
   color: #000;
   background-color: transparent;
+}
+
+@media (max-width: 1024px) {
+  .double-hero {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
