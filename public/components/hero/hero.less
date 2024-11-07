@@ -1,0 +1,78 @@
+@base-font-color: red;
+
+.hero-bg{
+    color:@base-font-color;
+}
+
+
+/* Basic styles for the hero block */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+  }
+  
+  /* Hero elements */
+  .hero__content {
+    max-width: 500px;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .hero__title {
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .hero__text {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .hero__image {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    margin: 10px;
+  }
+  
+  /* Modifier for image centered */
+  .hero--center {
+    flex-direction: column;
+  }
+  
+  /* Modifier for image on the left */
+  .hero--left {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .hero--left .hero__content {
+    text-align: left;
+  }
+  
+  /* Modifier for image on the right */
+  .hero--right {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  
+  .hero--right .hero__content {
+    text-align: right;
+  }
+  
+  @media (max-width: 768px) {
+    .hero--left, .hero--right {
+      flex-direction: column;
+    }
+  
+    .hero__content, .hero__image {
+      text-align: center;
+    }
+  }
+  

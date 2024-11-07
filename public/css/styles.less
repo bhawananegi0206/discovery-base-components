@@ -1,0 +1,43 @@
+/* public/css/styles.less */
+@base-color: #333;
+@button-color: #007bff;
+
+@import url(../components/hero/hero.less);
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header, .footer {
+  background-color: @base-color;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.header nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.main-content {
+  padding: 20px;
+  text-align: center;
+}
+
+button {
+  background-color: @button-color;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: darken(@button-color, 10%);
+}
