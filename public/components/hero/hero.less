@@ -1,33 +1,22 @@
-@base-font-color: red;
-
-.hero-bg {
-  color: @base-font-color;
-}
+@css: '../../css';
+@import '@{css}/variables.less';
 
 /* Basic styles for the hero block */
 #hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 20px;
-  background-color: #f4f4f4;
-  margin: 20px 0;
+  display: block;
+  position: relative;
+  margin-top: 20px;
 }
 
 .hero {
   display: flex;
+  flex-direction: column;
   height: 100%;
   position: relative;
-  border: 1px solid #ddd;
-  max-width: 700px;
-  padding: 10px;
 }
 
 /* Hero elements */
 .hero__content {
-  // max-width: 500px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -52,10 +41,16 @@
   margin: 0 0 1rem;
 }
 
+.hero__image__wrapper {
+  margin-bottom: 16px;
+  position: relative;
+  width: 100%;
+}
+
 .hero__image {
   width: 100%;
-  height: auto;
   object-fit: cover;
+  object-position: 50% 50%;
 }
 
 /* Modifier for image centered */
@@ -97,6 +92,12 @@
   padding: 2px 0;
   color: #000;
   background-color: transparent;
+  transition: background-size 266ms ease-out;
+
+  &:hover {
+    background-size: 0 1px;
+    transform: translateZ(0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -108,5 +109,23 @@
   .hero__content,
   .hero__image {
     text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    padding: 0 96px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #hero {
+    padding: 0 96px;
+  }
+}
+
+@media (min-width: 1921px) {
+  #hero {
+    padding: 0 calc(50vw - 864px);
   }
 }
