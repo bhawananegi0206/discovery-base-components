@@ -18,3 +18,41 @@ function loadComponent(id, file) {
 function showAlert() {
   alert('Button clicked!');
 }
+
+// Function to observe when the text comes into view
+// function animateOnView(entries, observer) {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add('animate');
+//     } else {
+//       entry.target.classList.remove('animate');
+//     }
+//   });
+// }
+
+// // Create an IntersectionObserver instance
+// const observer = new IntersectionObserver(animateOnView, {
+//   threshold: 0.1,
+// });
+
+// // Select the elements you want to animate and observe them
+// document.querySelectorAll('.visible').forEach((el) => {
+//   console.log(el);
+//   observer.observe(el);
+// });
+
+const observer = new IntersectionObserver(
+  (intersections) => {
+    intersections.forEach(({ target, isIntersecting }) => {
+      target.classList.toggle('animate', isIntersecting);
+    });
+  },
+  {
+    threshold: 0,
+  }
+);
+
+document.querySelectorAll('.visible').forEach((div) => {
+  console.log(div);
+  observer.observe(div);
+});
